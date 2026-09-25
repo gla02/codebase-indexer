@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codebase-indexer"
+version = "0.1.0"
+description = "A lightweight CLI for generating structural indexes of Python codebases."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Gonçalo Alves" },
+]
+dependencies = [
+    "pathspec>=0.12",
+]
+keywords = [
+    "python",
+    "ast",
+    "codebase",
+    "indexer",
+    "developer-tools",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.2",
+    "pytest>=8",
+]
+
+[project.scripts]
+codebase-index = "codebase_indexer.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/gla02/codebase-indexer"
+Repository = "https://github.com/gla02/codebase-indexer"
+Issues = "https://github.com/gla02/codebase-indexer/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
